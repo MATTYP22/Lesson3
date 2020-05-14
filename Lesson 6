@@ -1,0 +1,30 @@
+int l_motor=2;
+int r_motor=3;
+int speed=45;
+
+
+
+//FUNCTION DEFINITONS//
+
+void forward();
+{  motor(l_motor,speed);
+    motor(r_motor,speed);
+}
+
+void backward();
+{	motor(l_motor,-speed);
+    motor(r_motor,-speed);
+}
+    
+int main(){
+    int fruitloops;
+   
+for(fruitloops=fruitloops1;fruitloops<=12;fruitloops+=2)
+
+{
+    printf(fruitloop = %d\n",fruitloop);"
+   forward();
+   backward();
+    
+}
+}
