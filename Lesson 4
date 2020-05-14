@@ -1,0 +1,48 @@
+int l_motor=0;
+int r_motor=2;
+int speed=50;
+int f_sense_=2;
+int s_sense=0;
+int target=2937;
+int targetdos=1500;
+int backward=-30;
+int slow = 30;
+int fast = 60;
+
+int main()
+{ //while the front range sensor is not seeing the front wall... 
+ FollowWall();
+ veer_left();
+}
+
+//FUNCTIONS
+void FollowWall(){
+   while(analog(f_sense)<target){
+	//follow the wall on the side of the bot
+	
+ 	if(analog(s_sense)>targetdos){
+    	//if it moves to far away go back to wall
+   	veer_right();
+  	}
+  	if(analog(s_sense)<targetdos){
+  	// move away from wall if too close
+      	veer_left();
+  	}
+  }
+}
+ 	void veer_left(){
+ 	motor(l_motor,slow);    //go backward
+   motor(r_motor,fast);     //speed forward
+  }
+ 	void turn_left(){
+ 	motor(l_motor,-slow);   //go backward
+   motor(r_motor,fast);      //speed forward
+  }
+    	
+ 	void veer_right(){
+ 	motor(l_motor,fast);     //go backward
+   motor(r_motor,slow);    //speed forward
+   	
+  	
+    
+  }
